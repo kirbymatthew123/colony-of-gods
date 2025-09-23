@@ -44,7 +44,7 @@ TagManager:
   - name: Tilemap
     uniqueID: 801058313
     locked: 0
-  - name: Player
+  - name: Player2
     uniqueID: 2089941957
     locked: 0
   m_RenderingLayers:
