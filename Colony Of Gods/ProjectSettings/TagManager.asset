@@ -50,6 +50,9 @@ TagManager:
   - name: top
     uniqueID: 1959678095
     locked: 0
+  - name: ladder
+    uniqueID: 369129075
+    locked: 0
   - name: Player2
     uniqueID: 2089941957
     locked: 0
