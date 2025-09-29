@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: ChatGPT Image Sep 29, 2025, 05_56_15 PM_1
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Colony Of Gods/Assets/tiles 1/ChatGPT Image Sep 29, 2025, 05_56_15 PM_1.asset
   m_Sprite: {fileID: -6525993906794990722, guid: b82742bfaa1639e47bbc1c10fb27c251, type: 3}
+=======
+  m_Sprite: {fileID: -6525993906794990722, guid: 852fe5aec86fc4f47ae15bcb0eb37a6e, type: 3}
+>>>>>>> Stashed changes:Colony Of Gods/Assets/tiles/ChatGPT Image Sep 29, 2025, 05_56_15 PM_1.asset
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
