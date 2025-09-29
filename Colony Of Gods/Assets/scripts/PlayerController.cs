@@ -7,9 +7,12 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 movement;
 
+    private Animator animator;         // reference to Animator
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>(); // get Animator on this GameObject
     }
 
     void Update()
@@ -32,6 +35,20 @@ public class PlayerController : MonoBehaviour
 
         // Normalize so diagonal speed is consistent
         movement = movement.normalized;
+
+        // Tell Animator if the ant is moving
+        bool isMoving = movement != Vector2.zero;
+        animator.SetBool("isMoving", isMoving);
+
+        // Debug log to check state
+        if (isMoving)
+        {
+            Debug.Log("Ant is moving...");
+        }
+        else
+        {
+            Debug.Log("Ant is idle...");
+        }
     }
 
     void FixedUpdate()
