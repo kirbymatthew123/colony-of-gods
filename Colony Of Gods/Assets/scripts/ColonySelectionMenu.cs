@@ -3,30 +3,30 @@ using UnityEngine.SceneManagement;
 
 public class ColonySelectionMenu : MonoBehaviour
 {
-    public GameObject colonyPanel;   // yung SELECT panel
-    public GameObject mapSelection;  // yung MapSelection panel
+    [Header("UI Panels")]
+    public GameObject colonyPanel;   // SELECT panel (visible initially)
+    public GameObject mapSelection;  // map selection panel (initially inactive)
 
-    // Tatawagin sa colony button (Ant, Beetle, etc.)
+    // Called by UI Buttons (Inspector): use SelectAnt/SelectBeetle/...
     public void SelectColony(string colonyName)
     {
         PlayerPrefs.SetString("SelectedColony", colonyName);
-        Debug.Log("Colony Selected: " + colonyName);
+        Debug.Log("[ColonySelection] Selected: " + colonyName);
 
-        // Disable colony panel
-        if (colonyPanel != null)
-            colonyPanel.SetActive(false);
-
-        // Enable map selection panel
-        if (mapSelection != null)
-            mapSelection.SetActive(true);
+        if (colonyPanel != null) colonyPanel.SetActive(false);
+        if (mapSelection != null) mapSelection.SetActive(true);
     }
 
-    // Tatawagin sa map button (Forest, Cave, etc.)
+    public void SelectAnt()    { SelectColony("Ant"); }
+    public void SelectBeetle() { SelectColony("Beetle"); }
+    public void SelectMoth()   { SelectColony("Moth"); }
+    public void SelectSpider() { SelectColony("Spider"); }
+
+    // Called by map buttons: provide exact scene name string in inspector
     public void SelectMap(string mapName)
     {
         string colony = PlayerPrefs.GetString("SelectedColony", "Ant");
-        Debug.Log("Starting Game → Colony: " + colony + " | Map: " + mapName);
-
-        SceneManager.LoadScene(mapName); 
+        Debug.Log("[ColonySelection] Loading Map: " + mapName + " | Colony: " + colony);
+        SceneManager.LoadScene(mapName);
     }
 }

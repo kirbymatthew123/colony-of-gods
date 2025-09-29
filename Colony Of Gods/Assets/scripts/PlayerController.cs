@@ -1,62 +1,38 @@
 using UnityEngine;
-using UnityEngine.InputSystem; // new Input System
 
+[RequireComponent(typeof(Rigidbody2D))]
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;       // Speed of movement
+    public float moveSpeed = 5f;
     private Rigidbody2D rb;
     private Vector2 movement;
-
-    private Animator animator;         // reference to Animator
+    private Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>(); // get Animator on this GameObject
+        // Good: Prevents player from falling if gravity is not needed
+        rb.gravityScale = 0f; 
+        animator = GetComponent<Animator>();
     }
 
     void Update()
     {
-        // Reset movement every frame
-        movement = Vector2.zero;
+        // Read input from the keyboard (WASD or Arrows)
+        movement.x = Input.GetAxisRaw("Horizontal");
+        movement.y = Input.GetAxisRaw("Vertical");
+        movement = movement.normalized; // Keep movement speed consistent diagonally
 
-        // Read keyboard input
-        Keyboard kb = Keyboard.current;
-        if (kb == null) return;
-
-        if (kb.wKey.isPressed || kb.upArrowKey.isPressed)
-            movement.y += 1;
-        if (kb.sKey.isPressed || kb.downArrowKey.isPressed)
-            movement.y -= 1;
-        if (kb.aKey.isPressed || kb.leftArrowKey.isPressed)
-            movement.x -= 1;
-        if (kb.dKey.isPressed || kb.rightArrowKey.isPressed)
-            movement.x += 1;
-
-        // Normalize so diagonal speed is consistent
-        movement = movement.normalized;
-
-        // Tell Animator if the ant is moving
         bool isMoving = movement != Vector2.zero;
-        animator.SetBool("isMoving", isMoving);
-
-        // Debug log to check state
-        if (isMoving)
-        {
-            Debug.Log("Ant is moving...");
-        }
-        else
-        {
-            Debug.Log("Ant is idle...");
-        }
+        if (animator != null) animator.SetBool("isMoving", isMoving);
     }
 
     void FixedUpdate()
     {
-        // Move the ant
+        // Move the Rigidbody using physics (best practice for movement)
         rb.MovePosition(rb.position + movement * moveSpeed * Time.fixedDeltaTime);
-
-        // Rotate to face direction of movement
+        
+        // Handle rotation to face the direction of movement
         if (movement != Vector2.zero)
         {
             float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.Rad2Deg - 90f;

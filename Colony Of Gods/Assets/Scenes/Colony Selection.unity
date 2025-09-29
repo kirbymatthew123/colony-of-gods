@@ -701,7 +701,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a9f3050708f79e4eb3d6993f3528ba9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colonyPanel: {fileID: 1232193799}
+  colonyPanel: {fileID: 1195662362}
   mapSelection: {fileID: 1592384943}
 --- !u!1 &483722096
 GameObject:
@@ -784,7 +784,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 483722099}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 463589687}
+        m_TargetAssemblyTypeName: ColonySelectionMenu, Assembly-CSharp
+        m_MethodName: SelectBeetle
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &483722099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1043,8 +1055,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 463589687}
         m_TargetAssemblyTypeName: ColonySelectionMenu, Assembly-CSharp
-        m_MethodName: SelectColony
-        m_Mode: 5
+        m_MethodName: SelectAnt
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1420,7 +1432,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 759205785}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 463589687}
+        m_TargetAssemblyTypeName: ColonySelectionMenu, Assembly-CSharp
+        m_MethodName: SelectMoth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &759205785
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2115,7 +2139,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1556418910}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 463589687}
+        m_TargetAssemblyTypeName: ColonySelectionMenu, Assembly-CSharp
+        m_MethodName: SelectSpider
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1556418910
 MonoBehaviour:
   m_ObjectHideFlags: 0

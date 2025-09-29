@@ -44,14 +44,14 @@ TagManager:
   - name: Tilemap
     uniqueID: 801058313
     locked: 0
-  - name: buttom
-    uniqueID: 2272560109
+  - name: Buttom
+    uniqueID: 3088702341
     locked: 0
   - name: top
     uniqueID: 1959678095
     locked: 0
-  - name: Player2
-    uniqueID: 2089941957
+  - name: Player
+    uniqueID: 2272560109
     locked: 0
   m_RenderingLayers:
   - Default
